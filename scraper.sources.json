@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "storeName": "Paknsave",
+      "storeLocation": "Auckland",
+      "url": "https://example.com/paknsave-prices",
+      "rowSelector": ".product-card",
+      "nameSelector": ".product-name",
+      "priceSelector": ".product-price",
+      "unit": "unit",
+      "category": "general"
+    },
+    {
+      "storeName": "New World",
+      "storeLocation": "Auckland",
+      "url": "https://example.com/newworld-prices",
+      "rowSelector": "table tbody tr",
+      "nameSelector": "td:nth-child(1)",
+      "priceSelector": "td:nth-child(2)",
+      "unitSelector": "td:nth-child(3)",
+      "category": "general"
+    }
+  ]
+}
