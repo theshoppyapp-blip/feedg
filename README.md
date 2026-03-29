@@ -120,6 +120,34 @@ npm run scrape:prices:dry
 npm run scrape:prices
 ```
 
+## Automated Price Updates
+
+You can run scraping on a schedule (for example every 12 hours) using the included cron endpoint.
+
+1. Set a secret in your environment:
+
+```bash
+CRON_SECRET=your-random-secret
+```
+
+2. Keep `vercel.json` with the cron entry for:
+ - path: `/api/cron/scrape-prices`
+ - schedule: `0 */12 * * *`
+
+3. Ensure `MONGODB_URI` is configured in production.
+4. For hosted deployments, set `PAKNSAVE_STORAGE_STATE_JSON` with the JSON from your local `tmp/paknsave-storage.json`.
+
+### Trigger manually
+
+```bash
+curl -H "Authorization: Bearer $CRON_SECRET" http://localhost:3000/api/cron/scrape-prices
+```
+
+### Pak n Save caveat
+
+Pak n Save uses anti-bot protections, so fully unattended scraping can fail when the saved browser session expires.
+Use `npm run scrape:paknsave:session` periodically to refresh `tmp/paknsave-storage.json`, then update `PAKNSAVE_STORAGE_STATE_JSON`.
+
 ### Important
 
 - Only scrape websites you are allowed to scrape (check each site's terms/robots policy).

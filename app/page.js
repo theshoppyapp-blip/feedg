@@ -1,51 +1,70 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function HomePage() {
-  const [form, setForm] = useState({
-    budget: 70,
-    people: 2,
-    foodType: 'healthy',
-    dietaryRestrictions: '',
-    likedFoods: '',
-    likedShops: '',
-    userLocation: '',
-  });
+  const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [result, setResult] = useState(null);
+  const [messages, setMessages] = useState([
+    {
+      id: 'welcome',
+      role: 'assistant',
+      text: 'Yo whanau, ask me your budget challenge. Example: "$20 for a family of 5 in Auckland?"',
+      plan: null,
+      assumptions: null,
+    },
+  ]);
 
-  async function handleGeneratePlan(event) {
+  const quickPrompts = [
+    '$20 for a family of 5?',
+    '$35 high protein for 2 in Auckland',
+    '$50 vegetarian for 4 in Christchurch',
+  ];
+  const leftPrompts = quickPrompts.filter((_, index) => index % 2 === 0);
+  const rightPrompts = quickPrompts.filter((_, index) => index % 2 === 1);
+
+  async function handleAsk(event, presetPrompt) {
     event.preventDefault();
+    const message = (presetPrompt || input).trim();
+    if (!message) return;
+
+    const userMessage = {
+      id: `user-${Date.now()}`,
+      role: 'user',
+      text: message,
+      plan: null,
+      assumptions: null,
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
+    setInput('');
     setLoading(true);
     setError('');
 
     try {
-      const response = await fetch('/api/meal-plan', {
+      const response = await fetch('/api/feedg-chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          budget: Number(form.budget),
-          people: Number(form.people),
-          foodType: form.foodType,
-          dietaryRestrictions: form.dietaryRestrictions,
-          likedFoods: form.likedFoods,
-          likedShops: form.likedShops,
-          userLocation: form.userLocation,
-          save: true,
-        }),
+        body: JSON.stringify({ message }),
       });
 
       const data = await response.json();
       if (!response.ok) {
-        setError(data.error || 'Failed to generate plan');
-        setLoading(false);
+        setError(data.error || 'Could not build plan right now');
         return;
       }
 
-      setResult(data.plan);
+      const assistantMessage = {
+        id: `assistant-${Date.now()}`,
+        role: 'assistant',
+        text: data.reply,
+        plan: data.plan,
+        assumptions: data.assumptions,
+      };
+
+      setMessages((prev) => [...prev, assistantMessage]);
     } catch (requestError) {
       setError(requestError.message || 'Something went wrong');
     } finally {
@@ -54,170 +73,127 @@ export default function HomePage() {
   }
 
   return (
-    <main className="mx-auto min-h-screen max-w-6xl px-4 py-10 sm:px-6 md:py-14">
-      <section className="card rounded-3xl p-6 sm:p-8 md:p-10">
-        <p className="text-xs uppercase tracking-[0.24em] text-cyan-300">Shoppy</p>
-        <h1 className="mt-3 text-3xl font-semibold sm:text-4xl md:text-5xl">Eat healthy within your budget</h1>
-        <p className="mt-4 max-w-3xl text-slate-300">
-          Build a weekly meal plan, generate a shopping list, and compare grocery cost estimates by store.
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/auth/signup" className="rounded-lg bg-violet-500 px-4 py-2.5 font-medium text-white hover:bg-violet-400">Create account</Link>
-          <Link href="/auth/signin" className="rounded-lg border border-white/15 px-4 py-2.5 font-medium hover:bg-white/5">Sign in</Link>
-          <Link href="/dashboard" className="rounded-lg border border-cyan-400/30 px-4 py-2.5 font-medium text-cyan-200 hover:bg-cyan-400/10">Dashboard</Link>
+    <main className="feed-page">
+      <section className="hero-stack panel">
+        <div className="hero-head">
+          <p className="pill">NZ cheap kai chatbot</p>
+          <h1 className="hero-title">Feed G?</h1>
+          <p className="hero-subtitle">
+            Ask your budget challenge and get a practical NZ-style plan with meals, trolley picks, and best-value supermarket guidance.
+          </p>
         </div>
+
+        <aside className="hero-art">
+          <Image
+            src="/Feed G.png"
+            alt="Feed G branding"
+            width={700}
+            height={930}
+            priority
+            className="hero-image"
+          />
+        </aside>
       </section>
 
-      <section className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_1fr]">
-        <form onSubmit={handleGeneratePlan} className="card rounded-3xl p-6 sm:p-8">
-          <h2 className="text-xl font-semibold">Step 1: Your weekly inputs</h2>
-
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            <label className="text-sm text-slate-300">
-              Weekly budget (NZD)
-              <input
-                type="number"
-                min="1"
-                value={form.budget}
-                onChange={(event) => setForm((prev) => ({ ...prev, budget: event.target.value }))}
-                className="mt-2 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2.5 text-white outline-none"
-                required
-              />
-            </label>
-
-            <label className="text-sm text-slate-300">
-              Number of people
-              <input
-                type="number"
-                min="1"
-                value={form.people}
-                onChange={(event) => setForm((prev) => ({ ...prev, people: event.target.value }))}
-                className="mt-2 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2.5 text-white outline-none"
-                required
-              />
-            </label>
-          </div>
-
-          <label className="mt-4 block text-sm text-slate-300">
-            Food type
-            <select
-              value={form.foodType}
-              onChange={(event) => setForm((prev) => ({ ...prev, foodType: event.target.value }))}
-              className="mt-2 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2.5 text-white outline-none"
+      <section className="chat-stage">
+        <aside className="example-rail is-left" aria-label="Example prompts left">
+          {leftPrompts.map((prompt) => (
+            <button
+              key={prompt}
+              type="button"
+              className="example-bubble"
+              onClick={(event) => handleAsk(event, prompt)}
+              disabled={loading}
             >
-              <option value="healthy">Healthy</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="high protein">High protein</option>
-              <option value="student budget">Student budget</option>
-            </select>
-          </label>
+              {prompt}
+            </button>
+          ))}
+        </aside>
 
-          <label className="mt-4 block text-sm text-slate-300">
-            Dietary restrictions (optional, comma-separated)
-            <input
-              type="text"
-              placeholder="e.g. vegetarian"
-              value={form.dietaryRestrictions}
-              onChange={(event) => setForm((prev) => ({ ...prev, dietaryRestrictions: event.target.value }))}
-              className="mt-2 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2.5 text-white outline-none"
-            />
-          </label>
+        <div className="chat-shell panel">
+          <div className="chat-log" aria-live="polite">
+            {messages.map((message) => (
+              <article key={message.id} className={`bubble-wrap ${message.role === 'user' ? 'is-user' : 'is-assistant'}`}>
+                <div className="bubble">
+                  <p className="bubble-role">{message.role === 'user' ? 'You' : 'Feed G Bot'}</p>
+                  <p className="bubble-text">{message.text}</p>
+                  {message.plan ? (
+                    <div className="plan-grid">
+                      <div className="plan-card">
+                        <h3>Best Shop</h3>
+                        <p>
+                          {message.plan.recommendation
+                            ? `${message.plan.recommendation.storeName} ($${Number(message.plan.recommendation.total || 0).toFixed(2)})`
+                            : 'No recommendation yet'}
+                        </p>
+                      </div>
+                      <div className="plan-card">
+                        <h3>Meals</h3>
+                        <p>{(message.plan.meals || []).slice(0, 3).join(', ') || 'None yet'}</p>
+                      </div>
+                      <div className="plan-card">
+                        <h3>Budget Fit</h3>
+                        <p>{message.plan.budgetFit ? 'Within budget' : 'Over budget'}</p>
+                      </div>
+                    </div>
+                  ) : null}
 
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <label className="text-sm text-slate-300">
-              Foods you like
-              <input
-                type="text"
-                placeholder="e.g. banana, rice, tofu"
-                value={form.likedFoods}
-                onChange={(event) => setForm((prev) => ({ ...prev, likedFoods: event.target.value }))}
-                className="mt-2 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2.5 text-white outline-none"
-              />
-            </label>
-
-            <label className="text-sm text-slate-300">
-              Shops you like
-              <input
-                type="text"
-                placeholder="e.g. Paknsave, Local Market"
-                value={form.likedShops}
-                onChange={(event) => setForm((prev) => ({ ...prev, likedShops: event.target.value }))}
-                className="mt-2 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2.5 text-white outline-none"
-              />
-            </label>
-
-            <label className="text-sm text-slate-300">
-              Your location
-              <input
-                type="text"
-                placeholder="e.g. Auckland"
-                value={form.userLocation}
-                onChange={(event) => setForm((prev) => ({ ...prev, userLocation: event.target.value }))}
-                className="mt-2 w-full rounded-lg border border-white/10 bg-slate-950/60 px-3 py-2.5 text-white outline-none"
-              />
-            </label>
+                  {message.assumptions ? (
+                    <div className="assumptions-box">
+                      <p className="assumptions-title">Assumptions</p>
+                      <p className="assumptions-text">
+                        Budget ${Number(message.assumptions.budget || 0).toFixed(2)}
+                        {' · '}
+                        {Number(message.assumptions.people || 0)} people
+                        {' · '}
+                        {message.assumptions.foodType || 'healthy'}
+                      </p>
+                      <p className="assumptions-text">
+                        Restrictions: {(message.assumptions.dietaryRestrictions || []).join(', ') || 'none'}
+                        {' · '}
+                        Liked foods: {(message.assumptions.likedFoods || []).join(', ') || 'none'}
+                      </p>
+                    </div>
+                  ) : null}
+                </div>
+              </article>
+            ))}
+            {loading ? (
+              <article className="bubble-wrap is-assistant">
+                <div className="bubble loading-bubble">Cooking up a plan...</div>
+              </article>
+            ) : null}
           </div>
 
-          <button type="submit" disabled={loading} className="mt-6 w-full rounded-lg bg-violet-500 px-4 py-3 font-medium text-white hover:bg-violet-400 disabled:opacity-60">
-            {loading ? 'Generating…' : 'Step 2: Generate Meal Plan'}
-          </button>
+          <form className="chat-input-row" onSubmit={(event) => handleAsk(event)}>
+            <label htmlFor="feedg-input" className="sr-only">Ask Feed G</label>
+            <input
+              id="feedg-input"
+              type="text"
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+              placeholder="Try: $20 for a family of 5 in Auckland"
+              className="chat-input"
+            />
+            <button type="submit" className="send-btn" disabled={loading}>Send</button>
+          </form>
 
-          {error ? <p className="mt-3 text-sm text-red-300">{error}</p> : null}
-        </form>
-
-        <div className="card rounded-3xl p-6 sm:p-8">
-          <h2 className="text-xl font-semibold">Step 3: Your plan</h2>
-          {!result ? (
-            <p className="mt-4 text-sm text-slate-300">
-              Generate a plan to see meals, shopping list, and estimated prices by store.
-            </p>
-          ) : (
-            <div className="mt-4 space-y-5">
-              <section>
-                <h3 className="font-medium text-cyan-200">Weekly Meal Plan</h3>
-                <ul className="mt-2 space-y-1 text-sm text-slate-200">
-                  {result.meals.map((meal, index) => (
-                    <li key={`${meal}-${index}`}>• {meal}</li>
-                  ))}
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="font-medium text-cyan-200">Shopping List</h3>
-                <ul className="mt-2 space-y-1 text-sm text-slate-200">
-                  {result.shoppingList.map((item) => (
-                    <li key={`${item.productId}-${item.unit}`}>• {item.productName}: {item.quantity} {item.unit}</li>
-                  ))}
-                </ul>
-              </section>
-
-              <section>
-                <h3 className="font-medium text-cyan-200">Estimated Cost</h3>
-                <ul className="mt-2 space-y-1 text-sm text-slate-200">
-                  {result.estimatedCosts.map((store) => (
-                    <li key={store.storeId}>• {store.storeName}: ${store.total}</li>
-                  ))}
-                </ul>
-                {result.recommendation ? (
-                  <p className="mt-3 text-sm text-emerald-200">
-                    Best value: {result.recommendation.storeName} (${result.recommendation.total})
-                  </p>
-                ) : null}
-                {result.likedShops?.length ? (
-                  <p className="mt-2 text-sm text-slate-300">
-                    Preferred shops: {result.likedShops.join(', ')}
-                  </p>
-                ) : null}
-                {result.userLocation ? (
-                  <p className="mt-1 text-sm text-slate-300">
-                    Preferred location: {result.userLocation}
-                  </p>
-                ) : null}
-              </section>
-            </div>
-          )}
+          {error ? <p className="error-line">{error}</p> : null}
         </div>
+
+        <aside className="example-rail is-right" aria-label="Example prompts right">
+          {rightPrompts.map((prompt) => (
+            <button
+              key={prompt}
+              type="button"
+              className="example-bubble"
+              onClick={(event) => handleAsk(event, prompt)}
+              disabled={loading}
+            >
+              {prompt}
+            </button>
+          ))}
+        </aside>
       </section>
     </main>
   );
