@@ -8,22 +8,37 @@ const rootDir = path.resolve(process.cwd());
 const tmpDir = path.join(rootDir, 'tmp');
 const storageStatePath = path.join(tmpDir, 'paknsave-storage.json');
 const debugHtmlPath = path.join(tmpDir, 'paknsave-live.html');
-const targetUrl = 'https://www.paknsave.co.nz/shop/search/products?search=chicken';
+const targetUrl = 'https://www.paknsave.co.nz/';
 
 async function main() {
   await fs.mkdir(tmpDir, { recursive: true });
 
   const browser = await chromium.launch({
     headless: false,
-    channel: 'chromium',
+    executablePath: '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser',
+    args: [
+      '--disable-blink-features=AutomationControlled',
+      '--disable-dev-shm-usage',
+    ],
   });
 
   const context = await browser.newContext();
   const page = await context.newPage();
+  
+  // Hide automation signals
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => false });
+  });
 
-  console.log('Opening Pak n Save in a real browser...');
-  console.log('Complete any anti-bot check, choose your store, and leave the browser on a product results page.');
-  console.log(`Target page: ${targetUrl}`);
+  console.log('Opening Pak n Save in Brave...');
+  console.log('');
+  console.log('Steps:');
+  console.log('  1. Complete any Cloudflare/anti-bot check if it appears');
+  console.log('  2. Select your store (e.g. Pak\'nSave Sylvia Park)');
+  console.log('  3. Navigate to: Shop → Fruit & Vegetables (or any category)');
+  console.log('  4. Wait until products are fully visible on screen');
+  console.log('  5. Come back here and press Enter');
+  console.log('');
 
   await page.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
 

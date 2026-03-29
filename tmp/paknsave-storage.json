@@ -1,0 +1,337 @@
+{
+  "cookies": [
+    {
+      "name": "eCom_STORE_ID",
+      "value": "48dd98cc-a757-4102-b15d-ea82b4b10571",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372165.651932,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "STORE_ID_V2",
+      "value": "48dd98cc-a757-4102-b15d-ea82b4b10571|False",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372165.652277,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_cfuvid",
+      "value": "4FTUmwH0.2GjNNTuoPb7Q8T3xP5ZU9i30s0caQLsS0U-1774820132.6166809-1.0.1.1-Qm51.8yheeQoQm1AHBHIw1Oq.3.CYPb45v9JnD1Fo6Y",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "brands_store_reset",
+      "value": "",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372162.318407,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "fs-user-token",
+      "value": "eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiIwMTA4NmJjNy05Zjk1LTQ5ZGMtODljYy1hMTBlNGU2ZDg3YTMiLCJpc3MiOiJvbmxpbmUtY3VzdG9tZXIiLCJzZXNzaW9uSWQiOiJlOTYxYjU3Mi04MTZjLTQyZDgtOWNiYS0wOTMwZmU1NmUyMDMiLCJiYW5uZXIiOiJQTlMiLCJmaXJzdE5hbWUiOiJhbm9ueW1vdXMiLCJlbWFpbCI6ImFub255bW91cyIsInJvbGVzIjpbIkFOT05ZTU9VUyJdLCJleHAiOjE3NzQ4MjE5MzR9.QDMe8B1O56VLtsVHeVrBLGJqTTwUSmSE2eoNxgPYTQt3ngrMTvJz7hQO5_hP9dnOaZSR6Y9AG6-DEdarsPiUUwlErHXPSZz7x-DowEyc_SzJIkeJiaQVshSBJIilHsUSY7VXn4FO5LCtRk4aF5QNkwI7EShu1PU7iwPHQPIWaq0Zc1ayRaMScVbdXCrsk0k_WZ1WMzyATaPNY_rhXHHZdzjRmFCoDKgBtr0wgSmTJv90tkOKbSlKL3z3NQYAwNts-1HB_B5UZiM2U7oBco5EfX9AWK9jponwnf2Mx4jpd-1taAA2yXcqjDzQJRpJATCngPlZDcrH4SSrbkV70KKk3Q",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1774821934.583389,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "refresh_token",
+      "value": "cf1cf97c81ea45bbbf234b50c7ce8e68%3Aea4f1cc991982a77c66a29d05da98b5edb2120d770e67f7f62609f91a7b0ff494edbf922fc6752713c7e5f61443a8d0a6d7e2e17ea42c77ac7174aae056a4386f7cac3d2b17c33f0388189eb68150243e100bcd71544dc4fe933cab8f69544536187ad94182c1263a2f2f4bacd236fa578186546497aa6244431b33f4172b978af08844a76a4e8fe1955ce7fcc10a152a9535087fd86c0b0125db8ee0325e3d57839cc7214154ac6dd88e5d8ea420ecec117ed82e2f341dc5df2099864d0332fe507c1dc5a00d328e835bde88e829797cfd20f893186aae9b4338aa565bd708c",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1776029734.583528,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "cf_clearance",
+      "value": "sy2T7zOKgvWaxY21sX8JQwP_YbLwkFsTyEN3T1fLOQM-1774820135-1.2.1.1-6dzBZZEJWut_1iUV1jGP9uUN.D7BKnFTTTESX1eX_poCg3h6v5zbqeLcQ9sKdfcZhNV4rwx.xcRwp_lEOxMnsTiQsgxexx8YMF.GHc5Qyu9J565Q7Ij0xlM71Qw3Bt.V3x_xILp9qb1X.2wkXMwH_1YOg6GEBo0TIcq82LPJPhtMwyWoHDbyV6KyL2OeKcJwhY8UXslDYhZI5r1rH_.C3qatjaoxMpzLAEydJ32QXp4",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372134.796764,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://paknsave.co.nz",
+      "_crHasCrossSiteAncestor": false
+    },
+    {
+      "name": "__cf_bm",
+      "value": "aWekmSKVqa43NE56Y6Ggy11kuQpc7JRWyIFGEfu9Y0Q-1774820135.1347935-1.0.1.1-CMO0kPhSZhD3nH7gvfiC15RR6oOGmOsOGd6iPpAP1R0ztg18Swo9qsq3qy8DTStqJy.xe1W0Xs8lfPnS2n8AS2GgB2lLM2ZPegyvX_qEaCUBC22BG18eJTct1gmUXZcgv7pHagpwBQmwyJUB_z2S1Q",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1774821934.796994,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1786756893.1774820135",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1782596134,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "BVBRANDID",
+      "value": "7f1441c0-9142-40fa-af83-0a807b7ae67d",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372135.410773,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "BVBRANDSID",
+      "value": "18eb62ad-65b8-48a8-bc34-785e22551312",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1774821935,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.448401680.1774820136",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372135.769296,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "FPID",
+      "value": "FPID2.3.IOwOQEbxIYZg%2B0DIVZRz9jE0DkBPcb1w%2FI9oE3sjF7w%3D.1774820136",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372163.55042,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "FPLC",
+      "value": "vNfmSsUjhRNY95NOnRf5rr4m5DqhZhBqBwx8yu0qB6lNABwzwfmk3uKFPPvCA%2Fh5O5IlExDXk2NZbGFmc5yMgBnll9dtAdmkJfEv4yGPa2Eul%2BwOHMyA5S5zbLdcdQ%3D%3D",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1774892136.037303,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.2.1774820136076.75248995402257247",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1782596163.550523,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_hjSession_1022592",
+      "value": "eyJpZCI6ImIwNWE2NDg4LTljMzItNDUyZi04OWFhLTc2MzYzM2U4MzBjMyIsImMiOjE3NzQ4MjAxMzY1NzgsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MX0=",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1774821994,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "Region",
+      "value": "NI",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372136.791031,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ki_r",
+      "value": "",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372165.315353,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "fs-store-select-tooltip-closed",
+      "value": "true",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "browser_nearest_store",
+      "value": "{%22StoreId%22:%22%22%2C%22IsSuccess%22:false}",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372163.01162,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "browser_nearest_store_v2",
+      "value": "{%22StoreId%22:%22%22%2C%22IsSuccess%22:false}",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372163.012246,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_8ZFCCVKEC2",
+      "value": "GS2.1.s1774820135$o1$g1$t1774820163$j32$l0$h677238699",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372163.226499,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ABTastySession",
+      "value": "mrasn=&lp=https%253A%252F%252Fwww.paknsave.co.nz%252F",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1774821963,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ABTasty",
+      "value": "uid=8nw4eb0qfjgpbagj&fst=1774820135368&pst=-1&cst=1774820135368&ns=1&pvt=2&pvis=2&th=",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372163.302651,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.3.1774820163552.247853322154926001",
+      "domain": ".www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1782596163,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_hjSessionUser_1022592",
+      "value": "eyJpZCI6IjhkNGU2NWY2LWZkMTUtNTg2Yy1iYjZkLWMxYTRlMTI5NTkyZCIsImNyZWF0ZWQiOjE3NzQ4MjAxMzY1NzUsImV4aXN0aW5nIjp0cnVlfQ==",
+      "domain": ".paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372164.379583,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "ABDpNN4n3xNoFTqhnL5p0KAwkDPvrxuYpzzVs1JBbF2i0bwbkl2FOeDP5al/4woV7CxOnSl/YnfEM8bAA63VaiyzkuPaxYzJPbFqYmd1zTMoHniIPAp7RM+EB0STdpcKPiPezSdMiW0TRO8j1BVp5EbH/P5XjGAcTFaabV7A3N7x",
+      "domain": "api-prod.paknsave.co.nz",
+      "path": "/",
+      "expires": 1775424964.903991,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "ABDpNN4n3xNoFTqhnL5p0KAwkDPvrxuYpzzVs1JBbF2i0bwbkl2FOeDP5al/4woV7CxOnSl/YnfEM8bAA63VaiyzkuPaxYzJPbFqYmd1zTMoHniIPAp7RM+EB0STdpcKPiPezSdMiW0TRO8j1BVp5EbH/P5XjGAcTFaabV7A3N7x",
+      "domain": "api-prod.paknsave.co.nz",
+      "path": "/",
+      "expires": 1775424964.904201,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ki_t",
+      "value": "1774820137368%3B1774820137368%3B1774820165310%3B1%3B2",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372165.31126,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ki_s",
+      "value": "230136%3A0.0.0.0.0",
+      "domain": "www.paknsave.co.nz",
+      "path": "/",
+      "expires": 1790372165.316259,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.paknsave.co.nz",
+      "localStorage": [
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"errors\":0,\"creationTimeMs\":1774820134896},\"expires\":1782596134896},\"gtg_load_status\":{\"status\":3,\"expires\":1774906536400,\"delay\":1}}"
+        },
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1774820136045"
+        },
+        {
+          "name": "ABTastyData",
+          "value": "{\"VisitedPages\":[{\"url\":\"https://www.paknsave.co.nz/\",\"visite\":1,\"time\":1774820135368,\"title\":\"PAK'nSAVE | Online Grocery Shopping – NZ’s Lowest Food Prices | PAK'nSAVE\"},{\"url\":\"https://www.paknsave.co.nz/shop/category/fruit-and-vegetables?pg=1\",\"visite\":1,\"time\":1774820163301,\"title\":\"Fruit & Vegetables | PAK'nSAVE Online\"}]}"
+        },
+        {
+          "name": "fs",
+          "value": "{\"storeTimeslots\":{\"slots\":[],\"expiredTimeslotNotificationDismissed\":false,\"willExpireTimeslotNotificationDismissed\":false,\"expiredSoftTimeslotNotificationDismissed\":false,\"willExpireTimeslotNotificationClosedTimestamp\":null}}"
+        },
+        {
+          "name": "FLAGSMITH_FLAGS",
+          "value": "{\"api\":\"https://edge.api.flagsmith.com/api/v1/\",\"environmentID\":\"ser.PhyJvmVhJz8y9yxmGPtSED\",\"flags\":{\"test_login_enabled\":{\"id\":94262,\"enabled\":false,\"value\":null},\"feature_flag_identity_enabled\":{\"id\":94267,\"enabled\":false,\"value\":null},\"feature_flag_url_override\":{\"id\":98579,\"enabled\":false,\"value\":null},\"product_reviews_bazaarvoice\":{\"id\":103546,\"enabled\":true,\"value\":\"{\\n    \\\"regions\\\": [\\\"NI\\\", \\\"SI\\\"],\\n    \\\"categories\\\": [\\n      \\\"Baby & Toddler\\\",\\n      \\\"Baby & Toddler Toiletries\\\",\\n      \\\"Nursing & Feeding\\\",\\n      \\\"Baby Wipes\\\",\\n      \\\"Baby Formula\\\",\\n      \\\"Baby & Toddler Food\\\",\\n      \\\"Nappies & Changing\\\",\\n      \\\"Cat\\\",\\n      \\\"Dog\\\",\\n      \\\"Birds, Fish & Small Animals\\\",\\n      \\\"Pet Health & Accessories\\\",\\n      \\\"Cheese\\\",\\n      \\\"Cold Drinks\\\",\\n      \\\"Hot Drinks\\\",\\n      \\\"Desserts\\\",\\n      \\\"Baking Supplies & Sugar\\\",\\n      \\\"Biscuits & Crackers\\\",\\n      \\\"Breakfast Cereals\\\",\\n      \\\"Canned & Prepared Foods\\\",\\n      \\\"Condiments & Dressings\\\",\\n      \\\"Confectionery\\\",\\n      \\\"Jams, Honey & Spreads\\\",\\n      \\\"Pasta, Rice & Noodles\\\",\\n      \\\"Salad & Cooking Oils\\\",\\n      \\\"Sauces, Stock & Marinades\\\",\\n      \\\"Snack Foods\\\",\\n      \\\"World Foods\\\",\\n      \\\"Beer\\\",\\n      \\\"Craft Beer\\\",\\n      \\\"Cider\\\",\\n      \\\"Champagne & Sparkling Wine\\\",\\n      \\\"Red Wine\\\",\\n      \\\"White Wine\\\",\\n      \\\"Rose Wine\\\",\\n      \\\"Moscato & Sweet Wine\\\",\\n      \\\"Cask Wine\\\",\\n      \\\"Mini Wine Bottles & Cans\\\",\\n      \\\"Lower Alcohol Drinks\\\",\\n      \\\"Alcohol Free Drinks\\\",\\n      \\\"Seltzers & Other Alcoholic Drinks\\\",\\n      \\\"Bath, Shower & Soap\\\",\\n      \\\"Hair Care\\\",\\n      \\\"Dental & Oral Care\\\",\\n      \\\"Deodorant & Body Sprays\\\",\\n      \\\"Skin Care & Sun Care\\\",\\n      \\\"Shaving & Hair Removal\\\",\\n      \\\"Make Up & Nail Care\\\",\\n      \\\"Period & Continence Care\\\",\\n      \\\"Tissues & Cotton Wool\\\",\\n      \\\"Medical & First Aid\\\",\\n      \\\"Vitamins & Supplements\\\",\\n      \\\"Sports Nutrition & Weight Management\\\",\\n      \\\"Pregnancy & Contraception\\\",\\n      \\\"Cleaning Products\\\",\\n      \\\"Garage & Outdoor\\\",\\n      \\\"Household\\\",\\n      \\\"Laundry\\\",\\n      \\\"Stationery & Entertainment\\\",\\n      \\\"Cleaning & Accessories\\\",\\n      \\\"Toilet Paper, Tissues & Paper Towels\\\",\\n      \\\"Bathroom & Toilet Cleaners\\\",\\n      \\\"Dishwashing\\\",\\n      \\\"Kitchen Cleaners\\\",\\n      \\\"Food Wrap, Storage & Bags\\\",\\n      \\\"Pest & Insect Control\\\",\\n      \\\"Homewares\\\",\\n      \\\"Clothing & Accessories\\\",\\n      \\\"Batteries & Electrical\\\",\\n      \\\"Coffee\\\",\\n      \\\"Tea\\\",\\n      \\\"Hot Chocolate & Milk Drinks\\\",\\n      \\\"Water\\\",\\n      \\\"Soft Drinks & Mixers\\\",\\n      \\\"Juice & Smoothies\\\",\\n      \\\"Sports & Energy Drinks\\\",\\n      \\\"Syrups, Cordials & Powdered Drinks\\\",\\n      \\\"Kombucha & Functional Drinks\\\",\\n      \\\"Chips, Nuts & Snacks\\\",\\n      \\\"Chocolate, Sweets & Chewing Gum\\\",\\n      \\\"Canned Foods & Packets\\\",\\n      \\\"Long Life & Dairy Free Milk\\\",\\n      \\\"Cooking Sauces, Stocks & Marinades\\\",\\n      \\\"Table Sauces, Dressings & Condiments\\\",\\n      \\\"Oil & Vinegar\\\",\\n      \\\"Spices, Seasoning & Coatings\\\",\\n      \\\"Bulk Foods\\\"\\n    ]\\n  }\"},\"page_my_account_my_orders_detail\":{\"id\":107656,\"enabled\":false,\"value\":null},\"hide_have_you_forgotten_section\":{\"id\":115400,\"enabled\":false,\"value\":null},\"wrong_store_modal_enabled\":{\"id\":126917,\"enabled\":true,\"value\":null},\"pm_modal_with_unit_pricing_enabled\":{\"id\":146180,\"enabled\":true,\"value\":null},\"same_day_timeslots\":{\"id\":162536,\"enabled\":true,\"value\":null},\"purple\":{\"id\":168790,\"enabled\":false,\"value\":0},\"live_chat_v2_enabled\":{\"id\":170932,\"enabled\":false,\"value\":null},\"local_alcohol_policy\":{\"id\":195869,\"enabled\":false,\"value\":null}},\"ts\":null,\"traits\":{},\"evaluationEvent\":null}"
+        }
+      ]
+    }
+  ]
+}
