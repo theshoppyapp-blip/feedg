@@ -87,8 +87,8 @@ export default function HomePage() {
           <Image
             src="/Feed G.png"
             alt="Feed G branding"
-            width={700}
-            height={930}
+            width={390}
+            height={517}
             priority
             className="hero-image"
           />
