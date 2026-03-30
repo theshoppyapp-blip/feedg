@@ -85,7 +85,7 @@ export default function HomePage() {
 
         <aside className="hero-art">
           <Image
-            src="/feed-g.png"
+            src="/feed-g.jpg"
             alt="Feed G branding"
             width={390}
             height={517}
