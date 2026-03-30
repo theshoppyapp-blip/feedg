@@ -13,6 +13,7 @@
     "scrape:prices:dry": "tsx scripts/scrape-prices.js --dry-run"
   },
   "dependencies": {
+    "@exodus/bytes": "^1.15.0",
     "bcryptjs": "^3.0.3",
     "mongodb": "^6.21.0",
     "mongoose": "^9.2.1",
