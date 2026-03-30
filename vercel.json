@@ -1,4 +1,9 @@
 {
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
   "crons": [
     {
       "path": "/api/cron/scrape-prices",
